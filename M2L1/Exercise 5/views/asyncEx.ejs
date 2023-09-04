@@ -1,0 +1,29 @@
+<!--
+// Student Name: Dathan Dominic Neal
+// Student ID: 1218482291
+// Date September 4th, 2023
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Async Operation</title>
+</head>
+<body>
+  <h1>Asynchronous Operation</h1>
+  <button id="simulateAsync">Run Async Operation</button>
+  <p id="result"><%= result %></p>
+  <script>
+    const button = document.getElementById('simulateAsync');
+    const resultElement = document.getElementById('result');
+
+    button.addEventListener('click', async () => {
+      // Send request to the server to call async operation
+      const response = await fetch('/asyncEx');
+      const data = await response.json();
+      resultElement.textContent = data.result;
+    });
+  </script>
+</body>
+</html>
